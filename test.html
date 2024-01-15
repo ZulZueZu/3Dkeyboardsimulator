@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta
+      name="description"
+      content="“Keyboard Building Simulator” application is a software program that allows users to design and assemble a custom mechanical keyboard virtually. Users can choose from various keyboard layouts, switch types, keycaps, and other components to build their ideal keyboard."
+    />
+    <title>3D Keyboard Simulator</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Keyboard Building Simulator</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a href="index.html">Layout</a></li>
+        <li><a href="case.html">Case</a></li>
+        <li><a href="#">Switch</a></li>
+        <li><a href="#">Keycaps</a></li>
+        <li><a href="#">Lighting</a></li>
+        <li><a class="active" href="#">Test</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class='bx bx-dialpad icon'></i>
+          <div class="logo_name">3DKBS</div>
+          <i class='bx bx-menu' id="btn" ></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="#">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Tutorial</span>
+          </a>
+           <span class="tooltip">Tutorial</span>
+        </li>
+        <li>
+         <a href="#">
+           <i class='bx bxs-magic-wand' ></i>
+           <span class="links_name">Customize</span>
+         </a>
+         <span class="tooltip">Customize</span>
+       </li>
+       <li>
+         <a href="#">
+           <i class='bx bx-heart' ></i>
+           <span class="links_name">Saved</span>
+         </a>
+         <span class="tooltip">Saved</span>
+       </li>
+       <li>
+         <a href="#">
+           <i class='bx bx-cog' ></i>
+           <span class="links_name">Setting</span>
+         </a>
+         <span class="tooltip">Setting</span>
+       </li>
+       <li class="profile">
+           <div class="profile-details">
+             <div class="name_job">
+               <div class="name">About</div>
+               <div class="job">“Keyboard Building Simulator” application is a software program that allows users to design and assemble a custom mechanical keyboard virtually. Users can choose from various keyboard layouts, switch types, keycaps, and other components to build their ideal keyboard.</div>
+             </div>
+           </div>
+           <i class='bx bx-info-circle' id="info_box" ></i>
+       </li>
+      </ul>
+    </div>
+    <section class="home-section">
+        <div>
+            <div class="container">
+                <div class="stats">
+                  <p>Time: <span id="timer">0s</span></p>
+                  <p>Mistakes: <span id="mistakes">0</span></p>
+                </div>
+                <div
+                  id="quote"
+                  onmousedown="return false"
+                  onselectstart="return false"
+                ></div>
+                <textarea
+                  rows="3"
+                  id="quote-input"
+                  placeholder="Type here when the test starts.."
+                ></textarea>
+                <button id="start-test" onclick="startTest()">Start Test</button>
+                <button id="stop-test" onclick="displayResult()">Stop Test</button>
+                <div class="result">
+                  <h3>Result</h3>
+                  <div class="wrapper">
+                    <p>Accuracy: <span id="accuracy"></span></p>
+                    <p>Speed: <span id="wpm"></span></p>
+                    <button id="try-again-button" onclick="tryAgain()">Try Again</button>
+                  </div>
+                </div>
+              </div>
+
+          <canvas id="webgl"></canvas>
+        </div>
+    </section>
+    <script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    let searchBtn = document.querySelector(".bx-search");
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        sidebar.classList.toggle("closed"); // Add this line
+        menuBtnChange();
+    });
+
+    searchBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        sidebar.classList.toggle("closed"); // Add this line
+        menuBtnChange();
+    });
+
+    // following are the code to change sidebar button(optional)
+    function menuBtnChange() {
+     if(sidebar.classList.contains("open")){
+       closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+     }else {
+       closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+     }
+    }
+    </script>
+
+    
+    <script type="module" src="/three.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

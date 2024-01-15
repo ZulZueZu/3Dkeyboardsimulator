@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta
+      name="description"
+      content="Mechanical keyboard simulator with Cherry, Gateron, Kailh, and other custom switches. Test your typing speed in a one minute typing test."
+    />
+    <title>3D Keyboard Simulator</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Keyboard Building Simulator</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a href="index.html">Layout</a></li>
+        <li><a class="active" href="#">Case</a></li>
+        <li><a href="#">Switch</a></li>
+        <li><a href="#">Keycaps</a></li>
+        <li><a href="#">Lighting</a></li>
+        <li><a href="test.html">Test</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class='bx bx-dialpad icon'></i>
+          <div class="logo_name">3DKBS</div>
+          <i class='bx bx-menu' id="btn" ></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="#">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Tutorial</span>
+          </a>
+           <span class="tooltip">Tutorial</span>
+        </li>
+        <li>
+         <a href="#">
+           <i class='bx bxs-magic-wand' ></i>
+           <span class="links_name">Customize</span>
+         </a>
+         <span class="tooltip">Customize</span>
+       </li>
+       <li>
+         <a href="#">
+           <i class='bx bx-heart' ></i>
+           <span class="links_name">Saved</span>
+         </a>
+         <span class="tooltip">Saved</span>
+       </li>
+       <li>
+         <a href="#">
+           <i class='bx bx-cog' ></i>
+           <span class="links_name">Setting</span>
+         </a>
+         <span class="tooltip">Setting</span>
+       </li>
+       <li class="profile">
+           <div class="profile-details">
+             <div class="name_job">
+               <div class="name">About</div>
+               <div class="job">Keyboard Building Simulator</div>
+             </div>
+           </div>
+           <i class='bx bx-info-circle' id="log_out" ></i>
+       </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <div>
+        <div class="container-sizeC">
+                <h2>Case</h2>
+                <h4>Standard Colour</h4>
+                <div class='colors'>
+                    <div>
+                      <input type="color" id="case1" name="case" value="#FFFFFF" />
+                    </div>
+                    <div>
+                      <input type="color" id="case1" name="case" value="#FF0000" />
+                    </div>
+                    <div>
+                      <input type="color" id="case1" name="case" value="#FF8000" />
+                    </div>
+                    <div>
+                      <input type="color" id="case1" name="case" value="#FFFF00" />
+                    </div>
+                    <div>
+                      <input type="color" id="case1" name="case" value="#00FF00" />
+                    </div>
+                    <div>
+                      <input type="color" id="case1" name="case" value="#0000FF" />
+                    </div>
+                    <div>
+                      <input type="color" id="case1" name="case" value="#FF007F" />
+                    </div>
+                    <div>
+                      <input type="color" id="case1" name="case" value="#000000" />
+                    </div>
+                </div>
+          </div>
+
+        <canvas id="webgl"></canvas>
+      </div>
+  </section>
+
+  <script type="module" src="/three.js"></script>
+
+  <script>
+    // Function to get the selected layout from localStorage
+    function getSelectedLayout() {
+      return localStorage.getItem('selectedLayout');
+    }
+  
+    // Load the keyboard with the selected layout from localStorage
+    window.onload = function() {
+      const selectedLayout = getSelectedLayout();
+      if (selectedLayout) {
+        loadKeyboard(selectedLayout);
+      }
+    };
+  </script>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    let searchBtn = document.querySelector(".bx-search");
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      menuBtnChange();//calling the function(optional)
+    });
+    searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+      sidebar.classList.toggle("open");
+      menuBtnChange(); //calling the function(optional)
+    });
+    // following are the code to change sidebar button(optional)
+    function menuBtnChange() {
+      if (sidebar.classList.contains("open")) {
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+      } else {
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+      }
+    }
+  </script>
+
+  </body>
+</html>
