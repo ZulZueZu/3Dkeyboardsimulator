@@ -24,11 +24,8 @@
         <i class="fas fa-bars"></i>
       </label>
       <ul>
-        <li><a class="active" href="#">Layout</a></li>
-        <li><a href="case.html">Case</a></li>
-        <li><a href="#">Switch</a></li>
-        <li><a href="#">Keycaps</a></li>
-        <li><a href="#">Lighting</a></li>
+        <li><a href="index.html">Layout</a></li>
+
         <li><a href="test.html">Test</a></li>
       </ul>
     </nav>
@@ -41,32 +38,25 @@
       </div>
       <ul class="nav-list">
         <li>
-          <a href="#">
+          <a class="active" href="tutorial.html">
             <i class='bx bx-grid-alt'></i>
-            <span class="tutorial.html">Tutorial</span>
+            <span class="links_name">Tutorial</span>
           </a>
            <span class="tooltip">Tutorial</span>
         </li>
         <li>
-         <a href="#">
+         <a href="index.html">
            <i class='bx bxs-magic-wand' ></i>
            <span class="links_name">Customize</span>
          </a>
          <span class="tooltip">Customize</span>
        </li>
        <li>
-         <a href="#">
+         <a href="test.html">
            <i class='bx bx-heart' ></i>
            <span class="links_name">Saved</span>
          </a>
          <span class="tooltip">Saved</span>
-       </li>
-       <li>
-         <a href="#">
-           <i class='bx bx-cog' ></i>
-           <span class="links_name">Setting</span>
-         </a>
-         <span class="tooltip">Setting</span>
        </li>
        <li class="profile">
            <div class="profile-details">
@@ -81,63 +71,40 @@
     </div>
     <section class="home-section">
         <div>
-          <div class="container-size">
-            <div class="layout-label">Layout</div>
-            <button class="size-button" data-size="1">Numpad</button>
-            <button class="size-button" data-size="2">40%</button>
-            <button class="size-button" data-size="3">60%</button>
-            <button class="size-button" data-size="4">65%</button>
-            <button class="size-button" data-size="5">75%</button>
-            <button class="size-button" data-size="6">Compact</button>
-            <button class="size-button" data-size="7">Tenkeyless</button>
-            <button class="size-button" data-size="8">100%</button>
-          </div>
+          <div class="container-sizeT">
+            <div class="tuto-label">Step-by-step Tutorial</div>
+            <button class="tuto-button" data-num="1">Install stabilizers onto PCB</button>
+            <button class="tuto-button" data-num="2">Install keyboard plate onto PCB</button>
+            <button class="tuto-button" data-num="3">Install switches onto PCB</button>
+            <button class="tuto-button" data-num="4">Mount plate and PCB onto keyboard case</button>
+            <button class="tuto-button" data-num="5">Screw keyboard case and base and top together</button>
+            <button class="tuto-button" data-num="6">Install keycaps onto switches</button>
+            <button class="tuto-button" data-num="customize" onclick="goToCustomize()">Customize?</button>
+        </div>        
 
           <canvas id="webgl"></canvas>
         </div>
     </section>
 
-    <script type="module" src="/three.js"></script>
+    <script type="module" src="/three2.js"></script>
 
     <script>
-      // Function to set the selected layout in localStorage
-      function setSelectedLayout(layout) {
-        localStorage.setItem('selectedLayout', layout);
-      }
-    
-      // Your existing code for handling layout selection
-      document.querySelectorAll('.size-button').forEach(button => {
-        button.addEventListener('click', function(event) {
-          event.preventDefault();
-          const layout = this.getAttribute('data-size');
-          setSelectedLayout(layout);
-          loadKeyboard(layout);
-        });
-      });
-    
-      // Load the keyboard with the selected layout from localStorage
-      window.onload = function() {
-        const selectedLayout = localStorage.getItem('selectedLayout');
-        if (selectedLayout) {
-          loadKeyboard(selectedLayout);
-        }
-      };
-    </script>
-
-    <script>
+      function goToCustomize() {
+        window.location.href = 'index.html';
+    }
       let sidebar = document.querySelector(".sidebar");
       let closeBtn = document.querySelector("#btn");
-      let searchBtn = document.querySelector(".bx-search");
+      //let searchBtn = document.querySelector(".bx-search");
       closeBtn.addEventListener("click", () => {
         sidebar.classList.toggle("open");
         sidebar.classList.toggle("closed");
         menuBtnChange();
       });
-      searchBtn.addEventListener("click", () => {
+      /*searchBtn.addEventListener("click", () => {
         sidebar.classList.toggle("open");
         sidebar.classList.toggle("closed");
         menuBtnChange();
-      });
+      });*/
 
       // following are the code to change sidebar button(optional)
       function menuBtnChange() {

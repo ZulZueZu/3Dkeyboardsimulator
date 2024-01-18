@@ -8,47 +8,6 @@
     overflow: hidden;
 }
 
-/*Button to change keyboard testing*/
-
-.container-size {
-  width: 200px; /* Adjust the width as needed */
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* Set a transparent background color */
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 45%; /* Adjust the top position to center vertically */
-  left: 90%; /* Keep the left position for the container centered */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align items (buttons) on the left */
-  border-radius: 10px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(10px); /* Apply a blur effect to the background */
-  -webkit-backdrop-filter: blur(9px);
-}
-
-.layout-label {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.size-button {
-  cursor: pointer;
-  background-color: #808080; /* Default background color */
-  color: white; /* Default text color */
-  padding: 8px 16px; /* Adjust padding as needed */
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 5px; /* Add margin between buttons */
-  align-self: flex-start; /* Align buttons to the left */
-  transition: background-color 0.3s ease; /* Add a smooth transition */
-}
-
-.size-button:hover {
-  background-color: #696969; /* Change the background color on hover */
-}
-
 /*Navigation*/
 
 nav{
@@ -386,7 +345,7 @@ nav{
     background-color: rgba(255, 255, 255, 0.8); /* Set a transparent background color */
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 30%;
+    top: 33%;
     left: 50%;
     border-radius: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -445,7 +404,49 @@ nav{
     color: #e81c4e;
   }
 
-  /*Color Change*/
+  
+/*Button to change keyboard testing*/
+
+.container-size {
+  width: 200px; /* Adjust the width as needed */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Set a transparent background color */
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 45%; /* Adjust the top position to center vertically */
+  left: 92%; /* Keep the left position for the container centered */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items (buttons) on the left */
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+  -webkit-backdrop-filter: blur(9px);
+}
+
+.layout-label {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.size-button {
+  cursor: pointer;
+  background-color: #808080; /* Default background color */
+  color: white; /* Default text color */
+  padding: 8px 16px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 5px; /* Add margin between buttons */
+  align-self: flex-start; /* Align buttons to the left */
+  transition: background-color 0.3s ease; /* Add a smooth transition */
+}
+
+.size-button:hover {
+  background-color: #696969; /* Change the background color on hover */
+}
+
+  /*Color Change case*/
 
   .container-sizeC {
     width: 300px;
@@ -453,8 +454,8 @@ nav{
     background-color: rgba(255, 255, 255, 0.8);
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 45%;
-    left: 90%;
+    top: 15%;
+    left: 12%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -476,6 +477,154 @@ nav{
     margin: 1%; /* Add a margin between the color divs */
     box-sizing: border-box; /* Include padding and border in the width */
   }
+
+    /*Color Change lighting*/
+
+    .container-sizeL {
+      width: 300px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 45%;
+      left: 12%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(9px);
+    }
+    
+    .colors {
+      display: flex;
+      flex-wrap: wrap; /* Wrap the colors to the next row */
+      justify-content: flex-start; /* Start from the left */
+    }
+    
+    .colors div {
+      padding: 8px;
+      width: 23%; /* Set the width for each color div to approximately 25% */
+      margin: 1%; /* Add a margin between the color divs */
+      box-sizing: border-box; /* Include padding and border in the width */
+    }
+
+        /*Color Change lighting*/
+
+    .container-sizeL {
+      width: 300px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 74%;
+      left: 12%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(9px);
+    }
+
+    /*Color Change keycap*/
+
+    .container-sizeK {
+      width: 300px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 44.5%;
+      left: 12%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(9px);
+    }
+
+    /*Switch Change*/
+
+    .container-sizeS {
+      width: 300px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 10%;
+      left: 88%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(9px);
+    }
+
+    .container-sizeSw {
+      width: 300px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 10%;
+      left: 55%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(9px);
+    }
+
+    /*Tutorial*/
+
+    .container-sizeT {
+      width: 400px; /* Adjust the width as needed */
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Set a transparent background color */
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 45%; /* Adjust the top position to center vertically */
+      left: 80%; /* Keep the left position for the container centered */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align items (buttons) on the left */
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+      -webkit-backdrop-filter: blur(9px);
+    }
+    
+    .tuto-label {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .tuto-button {
+      cursor: pointer;
+      background-color: #808080; /* Default background color */
+      color: white; /* Default text color */
+      padding: 8px 16px; /* Adjust padding as needed */
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 5px; /* Add margin between buttons */
+      align-self: flex-start; /* Align buttons to the left */
+      transition: background-color 0.3s ease; /* Add a smooth transition */
+    }
+    
+    .tuto-button:hover {
+      background-color: #696969; /* Change the background color on hover */
+    }
+    
   
   
 

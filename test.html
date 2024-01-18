@@ -25,11 +25,8 @@
       </label>
       <ul>
         <li><a href="index.html">Layout</a></li>
-        <li><a href="case.html">Case</a></li>
-        <li><a href="#">Switch</a></li>
-        <li><a href="#">Keycaps</a></li>
-        <li><a href="#">Lighting</a></li>
-        <li><a class="active" href="#">Test</a></li>
+
+        <li><a class="active" href="test.html">Test</a></li>
       </ul>
     </nav>
 
@@ -41,32 +38,25 @@
       </div>
       <ul class="nav-list">
         <li>
-          <a href="#">
+          <a href="tutorial.html">
             <i class='bx bx-grid-alt'></i>
             <span class="links_name">Tutorial</span>
           </a>
            <span class="tooltip">Tutorial</span>
         </li>
         <li>
-         <a href="#">
+         <a href="index.html">
            <i class='bx bxs-magic-wand' ></i>
            <span class="links_name">Customize</span>
          </a>
          <span class="tooltip">Customize</span>
        </li>
        <li>
-         <a href="#">
+         <a href="test.html">
            <i class='bx bx-heart' ></i>
            <span class="links_name">Saved</span>
          </a>
          <span class="tooltip">Saved</span>
-       </li>
-       <li>
-         <a href="#">
-           <i class='bx bx-cog' ></i>
-           <span class="links_name">Setting</span>
-         </a>
-         <span class="tooltip">Setting</span>
        </li>
        <li class="profile">
            <div class="profile-details">
@@ -105,6 +95,24 @@
                     <p>Speed: <span id="wpm"></span></p>
                     <button id="try-again-button" onclick="tryAgain()">Try Again</button>
                   </div>
+                </div>
+              </div>
+
+              <div class="container-sizeS">
+                <h2>Switch</h2>
+                <h4>Change switch sound</h4>
+                <div class="change">
+                  <select id="switchSoundSelect" name="switchSound">
+                    <option value="option1">Clicky - Cherry MX Blue</option>
+                    <option value="option2">Clicky - Kailh Box Navies</option>
+                    <option value="option3">Clicky - Gateron Blue</option>
+                    <option value="option4">Tactile - Cherry MX Brown</option>
+                    <option value="option5">Tactile - Holy Pandas</option>
+                    <option value="option6">Tactile - Akko V3 Cream Blue</option>
+                    <option value="option7">Linear - Cherry MX Black</option>
+                    <option value="option8">Linear - NovelKeys Cream</option>
+                    <option value="option9">Linear - Gateron Red Inks</option>
+                  </select>
                 </div>
               </div>
 
