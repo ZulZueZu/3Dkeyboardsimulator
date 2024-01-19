@@ -1,7 +1,7 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GUI } from 'dat.gui';
+import * as THREE from '../three';
+import { GLTFLoader } from '../three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from '../three/addons/controls/OrbitControls.js';
+import { GUI } from '../dat.gui';
 
 const listener = new THREE.AudioListener();
 const canvas = document.querySelector('#webgl');
