@@ -20,6 +20,16 @@ const loader = new GLTFLoader();
 let currentKeyboardNum = 1; // Default animation
 let mixer; // AnimationMixer
 
+// Map keyboard size to clip name
+const clipMappings = {
+    1: "60stabiliser",
+    2: "60plate",
+    3: "60switch",
+    4: "AllAction",
+    5: "ScrewAction",
+    6: "KeycapAction",
+};
+
 // Function to load the keyboard based on animation
 function loadKeyboard(num) {
     loader.load(`keyboard_ani_${num}.glb`, function (gltf) {
@@ -37,31 +47,22 @@ function loadKeyboard(num) {
         // Set up animation mixer
         mixer = new THREE.AnimationMixer(model);
 
-        const keycapAction = mixer.clipAction(gltf.animations.find(clip => clip.name === '60keycap'));
-        const plateAction = mixer.clipAction(gltf.animations.find(clip => clip.name === '60plate'));
-        const pcbAction = mixer.clipAction(gltf.animations.find(clip => clip.name === '60pcb'));
-        const stabiliserAction = mixer.clipAction(gltf.animations.find(clip => clip.name === '60stabiliser'));
-        const switchAction = mixer.clipAction(gltf.animations.find(clip => clip.name === '60switch'));
-        const textAction = mixer.clipAction(gltf.animations.find(clip => clip.name === '60text'));
+        const clips = gltf.animations;
 
-        // Configure the animations to play only once
-        keycapAction.setLoop(THREE.LoopOnce);
-        plateAction.setLoop(THREE.LoopOnce);
-        pcbAction.setLoop(THREE.LoopOnce);
-        stabiliserAction.setLoop(THREE.LoopOnce);
-        switchAction.setLoop(THREE.LoopOnce);
-        textAction.setLoop(THREE.LoopOnce);
+        // Use the mapping to get the clip name for the current keyboard size
+        const clipName = clipMappings[num];
 
-        // Set the animations to go slower
-        //keycapAction.timeScale = 0.5; // Adjust the time scale as needed
-
-        // Play the animations
-        pcbAction.play();
-        plateAction.play();
-        switchAction.play();
-        stabiliserAction.play();
-        textAction.play();
-        keycapAction.play();
+        if (clipName) {
+            const clip = THREE.AnimationClip.findByName(clips, clipName);
+            const action = mixer.clipAction(clip);
+            action.timeScale = 0.5;
+            action.setLoop(THREE.LoopOnce);
+            action.play();
+        } else {
+            console.error(`Clip name not found for keyboard size: ${num}`);
+        }
+    }, undefined, function (error) {
+        console.error(error);
     });
 }
 
@@ -82,7 +83,7 @@ numButtons.forEach((button) => {
 });
 
 // Initial load
-loadKeyboard(4);
+loadKeyboard(currentKeyboardNum);
 
 // Adjusted lights with reduced intensities
 const light1 = new THREE.PointLight(0xffffff, 0.5, 10);
@@ -102,13 +103,13 @@ scene.add(ambientLight);
 
 const controls = new OrbitControls(camera, canvas);
 
-
+const clock = new THREE.Clock();
 function animate() {
     requestAnimationFrame(animate);
 
     // Update animation mixer
     if (mixer) {
-        mixer.update(0.05); // Adjust the time delta as needed
+        mixer.update(clock.getDelta()); // Adjust the time delta as needed
     }
 
     renderer.render(scene, camera);

@@ -247,65 +247,6 @@ sizeButtons.forEach((button) => {
 // Initial load
 loadKeyboard(3);
 
-// Function to play the selected switch sound
-function playSwitchSound(selectedValue) {
-    // Stop any currently playing sound
-    akkoSound.stop();
-    gblueSound.stop();
-    gredSound.stop();
-    pandaSound.stop();
-    kailhSound.stop();
-    mxblackSound.stop();
-    mxblueSound.stop();
-    mxbrownSound.stop();
-    novelSound.stop();
-    backgroundSound.stop();
-
-    // Play the selected sound based on the option value
-    switch (selectedValue) {
-        case 'option1':
-            // Play the corresponding sound for 'Clicky - Cherry MX Blue'
-            mxblueSound.play();
-            break;
-        case 'option2':
-            // Play the corresponding sound for 'Clicky - Kailh Box Navies'
-            kailhSound.play();
-            break;
-        case 'option3':
-            // Play the corresponding sound for 'Clicky - Gateron Blue'
-            gblueSound.play();
-            break;
-        case 'option4':
-            // Play the corresponding sound for 'Tactile - Cherry MX Brown'
-            mxbrownSound.play();
-            break;
-        case 'option5':
-            // Play the corresponding sound for 'Tactile - Holy Pandas'
-            pandaSound.play();
-            break;
-        case 'option6':
-            // Play the corresponding sound for 'Tactile - Akko V3 Cream Blue'
-            akkoSound.play();
-            break;
-        case 'option7':
-            // Play the corresponding sound for 'Linear - Cherry MX Black'
-            mxblackSound.play();
-            break;
-        case 'option8':
-            // Play the corresponding sound for 'Linear - NovelKeys Cream'
-            novelSound.play();
-            break;
-        case 'option9':
-            // Play the corresponding sound for 'Linear - Gateron Red Inks'
-            gredSound.play();
-            break;
-        default:
-            // Default case, stop all sounds
-
-            break;
-    }
-}
-
 // Assuming you have a reference to the select element with id 'switchSoundSelect'
 const switchSoundSelect = document.getElementById('switchSoundSelect');
 
@@ -323,6 +264,74 @@ window.addEventListener(
     },
     true,
   );
+
+  let currentSound = null;
+
+// Function to play the selected switch sound
+function playSwitchSound(selectedValue) {
+    // Stop any currently playing sound
+    if (currentSound) {
+        currentSound.stop();
+    }
+
+    // Play the selected sound based on the option value
+    switch (selectedValue) {
+        case 'option1':
+            // Play the corresponding sound for 'Clicky - Cherry MX Blue'
+            currentSound = mxblueSound.play();
+            break;
+        case 'option2':
+            // Play the corresponding sound for 'Clicky - Kailh Box Navies'
+            currentSound = kailhSound.play();
+            break;
+        case 'option3':
+            // Play the corresponding sound for 'Clicky - Gateron Blue'
+            currentSound = gblueSound.play();
+            break;
+        case 'option4':
+            // Play the corresponding sound for 'Tactile - Cherry MX Brown'
+            currentSound = mxbrownSound.play();
+            break;
+        case 'option5':
+            // Play the corresponding sound for 'Tactile - Holy Pandas'
+            currentSound = pandaSound.play();
+            break;
+        case 'option6':
+            // Play the corresponding sound for 'Tactile - Akko V3 Cream Blue'
+            currentSound = akkoSound.play();
+            break;
+        case 'option7':
+            // Play the corresponding sound for 'Linear - Cherry MX Black'
+            currentSound = mxblackSound.play();
+            break;
+        case 'option8':
+            // Play the corresponding sound for 'Linear - NovelKeys Cream'
+            currentSound = novelSound.play();
+            break;
+        case 'option9':
+            // Play the corresponding sound for 'Linear - Gateron Red Inks'
+            currentSound = gredSound.play();
+            break;
+        default:
+            // Default case, stop all sounds
+            akkoSound.stop();
+            gblueSound.stop();
+            gredSound.stop();
+            pandaSound.stop();
+            kailhSound.stop();
+            mxblackSound.stop();
+            mxblueSound.stop();
+            mxbrownSound.stop();
+            novelSound.stop();
+            backgroundSound.stop();
+            break;
+    }
+        // If there's a new sound, resume it
+        if (currentSound) {
+            currentSound.play();
+        }
+    
+}
 
 
 // Adjusted lights with reduced intensities
