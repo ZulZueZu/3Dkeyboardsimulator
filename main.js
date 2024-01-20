@@ -18,13 +18,13 @@ camera.add(listener);
 
 const audioloader = new THREE.AudioLoader();
 
-const backgroundSound = new THREE.Audio(listener);
+/*const backgroundSound = new THREE.Audio(listener);
 audioloader.load('./test.mp3', function(buffer){
     backgroundSound.setBuffer(buffer);
     backgroundSound.setLoop(true);
     backgroundSound.setVolume(0.4);
     backgroundSound.play();
-});
+});*/
 
 const akkoSound = new THREE.Audio(listener);
 audioloader.load('./Akko_V3_Cream_Blue.mp3', function(buffer){
