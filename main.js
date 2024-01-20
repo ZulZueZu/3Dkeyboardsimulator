@@ -23,67 +23,67 @@ audioloader.load('../audio/test.mp3', function(buffer){
     backgroundSound.setBuffer(buffer);
     backgroundSound.setLoop(true);
     backgroundSound.setVolume(0.4);
-    //backgroundSound.play();
+    backgroundSound.play();
 });
 
 const akkoSound = new THREE.Audio(listener);
-audioloader.load('../audio/Akko_V3_Cream_Blue.mp3', function(buffer){
+audioloader.load('./Akko_V3_Cream_Blue.mp3', function(buffer){
     akkoSound.setBuffer(buffer);
     akkoSound.setLoop(false);
     akkoSound.setVolume(1.0);
 });
 
 const gblueSound = new THREE.Audio(listener);
-audioloader.load('../audio/Gateron_Blue.mp3', function(buffer){
+audioloader.load('./Gateron_Blue.mp3', function(buffer){
     gblueSound.setBuffer(buffer);
     gblueSound.setLoop(false);
     gblueSound.setVolume(1.4);
 });
 
 const gredSound = new THREE.Audio(listener);
-audioloader.load('../audio/Gateron_Red.mp3', function(buffer){
+audioloader.load('./Gateron_Red.mp3', function(buffer){
     gredSound.setBuffer(buffer);
     gredSound.setLoop(false);
     gredSound.setVolume(0.7);
 });
 
 const pandaSound = new THREE.Audio(listener);
-audioloader.load('../audio/HolyPanda.mp3', function(buffer){
+audioloader.load('./HolyPanda.mp3', function(buffer){
     pandaSound.setBuffer(buffer);
     pandaSound.setLoop(false);
     pandaSound.setVolume(0.7);
 });
 
 const kailhSound = new THREE.Audio(listener);
-audioloader.load('../audio/Kailh_Box_Navy.mp3', function(buffer){
+audioloader.load('./Kailh_Box_Navy.mp3', function(buffer){
     kailhSound.setBuffer(buffer);
     kailhSound.setLoop(false);
     kailhSound.setVolume(1.0);
 });
 
 const mxblueSound = new THREE.Audio(listener);
-audioloader.load('../audio/Mxblue.mp3', function(buffer){
+audioloader.load('./Mxblue.mp3', function(buffer){
     mxblueSound.setBuffer(buffer);
     mxblueSound.setLoop(false);
     mxblueSound.setVolume(0.7);
 });
 
 const mxblackSound = new THREE.Audio(listener);
-audioloader.load('../audio/Mxblack.mp3', function(buffer){
+audioloader.load('./Mxblack.mp3', function(buffer){
     mxblackSound.setBuffer(buffer);
     mxblackSound.setLoop(false);
     mxblackSound.setVolume(0.7);
 });
 
 const mxbrownSound = new THREE.Audio(listener);
-audioloader.load('../audio/MXBrown.mp3', function(buffer){
+audioloader.load('./MXBrown.mp3', function(buffer){
     mxbrownSound.setBuffer(buffer);
     mxbrownSound.setLoop(false);
     mxbrownSound.setVolume(0.7);
 });
 
 const novelSound = new THREE.Audio(listener);
-audioloader.load('../audio/Novelkeys_Cream.mp3', function(buffer){
+audioloader.load('./Novelkeys_Cream.mp3', function(buffer){
     novelSound.setBuffer(buffer);
     novelSound.setLoop(false);
     novelSound.setVolume(1.1);
