@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.min.css" rel="stylesheet">
     <meta
       name="description"
       content="“Keyboard Building Simulator” application is a software program that allows users to design and assemble a custom mechanical keyboard virtually. Users can choose from various keyboard layouts, switch types, keycaps, and other components to build their ideal keyboard."
@@ -25,7 +27,7 @@
       <ul>
         <li><a class="active" href="#">Layout</a></li>
 
-        <li><a href="test.html">Test</a></li>
+        <li><a href="./test.html">Test</a></li>
       </ul>
     </nav>
 
@@ -37,21 +39,21 @@
       </div>
       <ul class="nav-list">
         <li>
-          <a href="tutorial.html">
+          <a href="./tutorial.html">
             <i class='bx bx-grid-alt'></i>
             <span class="links_name">Tutorial</span>
           </a>
            <span class="tooltip">Tutorial</span>
         </li>
         <li>
-         <a href="index.html">
+         <a href="./index.html">
            <i class='bx bxs-magic-wand' ></i>
            <span class="links_name">Customize</span>
          </a>
          <span class="tooltip">Customize</span>
        </li>
        <li>
-         <a href="test.html">
+         <a href="./test.html">
            <i class='bx bx-heart' ></i>
            <span class="links_name">Typing Test</span>
          </a>
@@ -198,31 +200,6 @@
     </section>
 
     <script type="module" src="./main.js"></script>
-
-    <script>
-      // Function to set the selected layout in localStorage
-      function setSelectedLayout(layout) {
-        localStorage.setItem('selectedLayout', layout);
-      }
-    
-      // Your existing code for handling layout selection
-      document.querySelectorAll('.size-button').forEach(button => {
-        button.addEventListener('click', function(event) {
-          event.preventDefault();
-          const layout = this.getAttribute('data-size');
-          setSelectedLayout(layout);
-          loadKeyboard(layout);
-        });
-      });
-    
-      // Load the keyboard with the selected layout from localStorage
-      window.onload = function() {
-        const selectedLayout = localStorage.getItem('selectedLayout');
-        if (selectedLayout) {
-          loadKeyboard(selectedLayout);
-        }
-      };
-    </script>
 
     <script>
       let sidebar = document.querySelector(".sidebar");

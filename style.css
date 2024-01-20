@@ -11,6 +11,7 @@
 /*Navigation*/
 
 nav{
+    position: fixed;
     display: flex;
     height: 80px;
     width: 100%;
@@ -20,6 +21,7 @@ nav{
     padding: 0 50px 0 100px;
     flex-wrap: wrap;
   }
+
   nav .logo{
     color: #fff;
     font-size: 35px;
@@ -310,10 +312,10 @@ nav{
   }
  
   .home-section{
-    position: relative;
+    position: fixed;
     background: #E4E9F7;
     min-height: 100vh;
-    top: 0;
+    top: 80px;
     left: 78px;
     width: calc(100% - 78px);
     transition: all 0.5s ease;

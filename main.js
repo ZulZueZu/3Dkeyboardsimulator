@@ -1,7 +1,7 @@
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.js';
-import { GLTFLoader } from './three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from './three/addons/controls/OrbitControls.js';
-import { GUI } from './dat.gui';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
+
+import {GLTFLoader} from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/GLTFLoader.js';
+import {OrbitControls} from 'https://cdn.jsdelivr.net/npm/three@0.118/examples/jsm/controls/OrbitControls.js';
 
 const listener = new THREE.AudioListener();
 const canvas = document.querySelector('#webgl');
@@ -89,11 +89,28 @@ audioloader.load('../audio/Novelkeys_Cream.mp3', function(buffer){
     novelSound.setVolume(1.1);
 });
 
-const gui = new GUI();
 
 const options = {
     'Case': 0x2AC3D1
 }
+
+/*const fs =  require('fs');
+fs.readFile('output.txt', 'utf8', (err, data) => {
+    if(err){
+        console.error(err);
+        return;
+    }
+    console.log(data);
+});
+
+const content = "something interesting"
+
+fs.writeFile('output.txt', content, err => {
+    if(err){
+        console.err;
+        return;
+    }
+});*/
 
 const loader = new GLTFLoader();
 let currentKeyboardSize = 1; // Default size
@@ -115,10 +132,6 @@ function loadKeyboard(size) {
 
         // Set up animation mixer
         mixer = new THREE.AnimationMixer(model);
-
-        // Example: Play animation clip named "SpaceBarPress"
-        // const spaceBarPressAction = mixer.clipAction(gltf.animations.find(clip => clip.name === 'SpaceBarPress'));
-        // spaceBarPressAction.play();
 
         // Get all color inputs
         const colorInputs = document.querySelectorAll('input[name="case"]');
@@ -152,6 +165,7 @@ function loadKeyboard(size) {
         caseColorInputs.forEach((input) => {
             input.addEventListener('input', function () {
                 const colorValue = this.value;
+                console.log(`Case color: ${colorValue}`);
 
                 // Iterate over 'case' object names and update colors
                 caseObjectNames.forEach((name) => {
@@ -178,6 +192,7 @@ function loadKeyboard(size) {
         plateColorInputs.forEach((input) => {
             input.addEventListener('input', function () {
                 const colorValue = this.value;
+                console.log(`Lighting color: ${colorValue}`);
 
                 // Iterate over 'plate' object names and update colors
                 plateObjectNames.forEach((name) => {
@@ -198,6 +213,7 @@ function loadKeyboard(size) {
         keycapColorInputs.forEach((input) => {
             input.addEventListener('input', function () {
                 const colorValue = this.value;
+                console.log(`Keycaps color: ${colorValue}`);
 
                 // Iterate over all objects in the scene
                 scene.traverse((object) => {
@@ -310,11 +326,11 @@ window.addEventListener(
 
 
 // Adjusted lights with reduced intensities
-const light1 = new THREE.PointLight(0xffffff, 50, 10);
+const light1 = new THREE.PointLight(0xffffff, 5, 10);
 light1.position.set(0, 3, 2);
 scene.add(light1);
 
-const light2 = new THREE.PointLight(0xffffff, 10, 10);
+const light2 = new THREE.PointLight(0xffffff, 1, 10);
 light2.position.set(0, 2, -2);
 scene.add(light2);
 

@@ -1,7 +1,8 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GUI } from 'dat.gui';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
+
+import {GLTFLoader} from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/GLTFLoader.js';
+import {OrbitControls} from 'https://cdn.jsdelivr.net/npm/three@0.118/examples/jsm/controls/OrbitControls.js';
+
 
 const canvas = document.querySelector('#webgl');
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
@@ -14,7 +15,6 @@ scene.background = new THREE.Color(0x1b1b1b);
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight);
 camera.position.set(0, 0.3, 0.1);
 
-const gui = new GUI();
 
 const loader = new GLTFLoader();
 let currentKeyboardNum = 1; // Default animation
@@ -82,14 +82,14 @@ numButtons.forEach((button) => {
 });
 
 // Initial load
-loadKeyboard(currentKeyboardNum);
+loadKeyboard(4);
 
 // Adjusted lights with reduced intensities
-const light1 = new THREE.PointLight(0xffffff, 50, 10);
+const light1 = new THREE.PointLight(0xffffff, 0.5, 10);
 light1.position.set(0, 3, 2);
 scene.add(light1);
 
-const light2 = new THREE.PointLight(0xffffff, 10, 10);
+const light2 = new THREE.PointLight(0xffffff, 0.1, 10);
 light2.position.set(0, 2, -2);
 scene.add(light2);
 
@@ -101,6 +101,7 @@ const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
 const controls = new OrbitControls(camera, canvas);
+
 
 function animate() {
     requestAnimationFrame(animate);
